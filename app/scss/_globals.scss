@@ -1,0 +1,329 @@
+@use "variables" as *;
+@use "mixins";
+@use "keyframes";
+
+html {
+  font-size: 62.5%; // Default font size = 16px, --> 10px = 1rem
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem; // Prevent fixed header overlaps with page anchors
+}
+
+// Disable smooth scrolling if user prefers reduced motion
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $fz-md;
+  font-family: "Ubuntu", sans-serif;
+  background-color: $black;
+  color: $light-gray;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $light-blue;
+}
+
+a.text-link {
+  // Animated underline effect on hover
+  &::after {
+    content: "";
+    width: 100%;
+    height: 0.1rem;
+    position: absolute;
+    bottom: 0.1rem;
+    left: 0;
+    right: 0;
+    background-color: $light-blue;
+    transform: scaleX(0);
+    transition: $ease-150;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: $ubuntu-mono;
+  line-height: 1.1;
+  color: $white;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 5rem;
+  font-size: $fz-h2-sm;
+  text-align: center;
+
+  @include mixins.breakpoint-up(medium) {
+    font-size: $fz-h2-md;
+    margin-bottom: 6rem;
+  }
+
+  @include mixins.breakpoint-up(large) {
+    font-size: $fz-h2-lg;
+  }
+
+  @include mixins.breakpoint-up(extra-large) {
+    font-size: $fz-h2-xl;
+  }
+
+  &::before,
+  &::after {
+    content: "⠿⠿⠿";
+    color: $cyan;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+
+    @include mixins.breakpoint-up(medium) {
+      content: "⠿⠿⠿⠿⠿";
+      font-size: 2.6rem;
+    }
+
+    @include mixins.breakpoint-up(large) {
+      font-size: 2.9rem;
+    }
+
+    @include mixins.breakpoint-up(extra-large) {
+      font-size: 3.1rem;
+    }
+  }
+
+  &::before {
+    margin-right: 2.2rem;
+
+    @include mixins.breakpoint-up(large) {
+      margin-right: 3rem;
+    }
+  }
+
+  &::after {
+    margin-left: 2.2rem;
+
+    @include mixins.breakpoint-up(large) {
+      margin-left: 3rem;
+    }
+  }
+}
+
+h3 {
+  margin: 0 0 1rem;
+  font-size: $fz-lg;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01rem;
+  color: $white;
+
+  @include mixins.breakpoint-up(large) {
+    font-size: $fz-xl;
+  }
+}
+
+p {
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+img {
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Disable text selection
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**** Display ****/
+
+.invisible {
+  visibility: hidden;
+}
+
+// Hide for widths >= large
+.hide-lg-up {
+  @include mixins.breakpoint-up(large) {
+    display: none !important;
+  }
+}
+
+.hide-md-down {
+  @include mixins.breakpoint-down(medium) {
+    display: none !important;
+  }
+}
+
+.hide-sm-down {
+  @include mixins.breakpoint-down(small) {
+    display: none !important;
+  }
+}
+
+/**** Spacing ****/
+
+.container {
+  margin: 0 2.5rem;
+
+  @include mixins.breakpoint-up(medium) {
+    margin: 0 4rem;
+  }
+
+  @include mixins.breakpoint-up(large) {
+    max-width: 122rem;
+    margin: 0 auto;
+  }
+}
+
+.pad-x-lg {
+  @include mixins.breakpoint-up(large) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.pad-y {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  @include mixins.breakpoint-up(large) {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}
+
+/**** Flex ****/
+
+.flex {
+  display: flex;
+  flex-direction: row;
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+/**** Animations ****/
+
+// All animation keyframes are defined in "_keyframes.scss"
+
+// Initially set visibility to hidden for elements that has fade effect
+.has-fade {
+  visibility: hidden;
+}
+
+.fade-in {
+  animation: fade-in 250ms ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fade-out 250ms ease-in-out forwards;
+}
+
+.fade-in-out {
+  animation: fade-in-out 2s ease forwards;
+}
+
+/**** Buttons ****/
+
+.outline-btn {
+  width: max-content; // Prevent button taking 100% width due to flex
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  margin: 1rem 0;
+  border: 2px solid $light-gray;
+  border-radius: 5px;
+  color: $light-gray;
+  transition: $ease-150;
+
+  &:hover,
+  &:focus {
+    background-color: $light-gray-hover;
+  }
+
+  @include mixins.breakpoint-up(large) {
+    font-size: $fz-lg;
+  }
+
+  .material-icons {
+    margin-right: 1.2rem;
+  }
+
+  &-text {
+    margin-bottom: 0.2rem;
+  }
+}
+
+@mixin cta-outline-btn($color, $hoverColor) {
+  border-color: $color;
+  color: $color;
+  font-family: $ubuntu-mono;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    background-color: $hoverColor;
+  }
+}
+
+.email-btn {
+  @include cta-outline-btn($orange, $orange-hover);
+}
+
+.resume-btn {
+  @include cta-outline-btn($light-blue, $light-blue-hover);
+}

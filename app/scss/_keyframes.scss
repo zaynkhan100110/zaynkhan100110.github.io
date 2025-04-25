@@ -1,0 +1,105 @@
+@keyframes fade-in {
+  // We can animate `visibility` as a workaround of not being able to animate `display`
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Fades in, pauses, then fades out
+@keyframes fade-in-out {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  10% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+  99% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+// Hand wave animation: https://codepen.io/jakejarvis/pen/pBZWZw
+@keyframes hero-hand-wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// Chevron animation in Scroll To Top button at the footer
+@keyframes bounce-up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

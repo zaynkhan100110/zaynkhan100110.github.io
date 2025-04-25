@@ -1,0 +1,151 @@
+@use "variables" as *;
+@use "mixins";
+@use "keyframes";
+
+.hero {
+  padding: 4rem 0;
+  background-image: url("../../images/hero_bg.svg");
+  background-size: 100% 100%; // Stretch BG to 100% width & height
+
+  @include mixins.breakpoint-up(medium) {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 5rem);
+    justify-content: center; // Always vertically center the hero section
+  }
+
+  &__terminal {
+    background-color: $black;
+    border: 2px solid $gray;
+    border-radius: 10px;
+
+    @include mixins.breakpoint-up(large) {
+      margin: 0 6rem;
+    }
+  }
+
+  &__traffic_light {
+    width: 6.8rem;
+    height: 1.5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background-image: url("../../images/traffic_light_btn.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; // Takes up 100% width and height
+
+    @include mixins.breakpoint-up(medium) {
+      margin-left: 2.5rem;
+    }
+  }
+
+  &__terminal_container {
+    padding: 3rem 1.5rem 2rem;
+
+    @include mixins.breakpoint-up(medium) {
+      padding: 5rem 2rem 5rem 3rem;
+    }
+
+    @include mixins.breakpoint-up(large) {
+      padding: 5rem 3rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+
+    .green-chevron {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-top: 0.5rem;
+
+      @include mixins.breakpoint-up(medium) {
+        width: 2.9rem;
+        height: 2.9rem;
+      }
+
+      @include mixins.breakpoint-up(large) {
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-top: 0.9rem;
+        margin-right: 0.8rem;
+      }
+
+      @include mixins.breakpoint-up(extra-large) {
+        width: 3.8rem;
+        height: 3.8rem;
+      }
+    }
+
+    &_text {
+      width: 87%;
+      display: inline-block;
+      margin: 0 0 0 1rem;
+      font-size: 3rem;
+
+      @include mixins.breakpoint-up(medium) {
+        width: 93%;
+        font-size: 3.5rem;
+      }
+
+      @include mixins.breakpoint-up(large) {
+        width: 92%;
+        font-size: 4.3rem;
+      }
+
+      @include mixins.breakpoint-up(extra-large) {
+        width: 94%;
+        font-size: 5rem;
+      }
+    }
+  }
+
+  &__hand_wave {
+    margin-left: 0.3rem;
+  }
+
+  // Animate hand wave emoji on hover
+  &__hand_wave:hover {
+    display: inline-block;
+    cursor: default;
+    animation-name: hero-hand-wave; // Keyframes defined in "_keyframes.scss"
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    transform-origin: 70% 70%;
+  }
+
+  // Container for description & CTA buttons
+  &__content {
+    padding: 0 0 0 0.5rem;
+
+    @include mixins.breakpoint-up(medium) {
+      padding: 0 3.7rem;
+    }
+
+    @include mixins.breakpoint-up(large) {
+      padding: 0 4.7rem;
+    }
+
+    @include mixins.breakpoint-up(extra-large) {
+      padding: 0 5.7rem;
+    }
+  }
+
+  &__description {
+    margin-top: 4.5rem;
+    margin-bottom: 3.5rem;
+    font-size: $fz-sm;
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.breakpoint-up(medium) {
+      flex-direction: row;
+
+      .email-btn {
+        margin-right: 4rem;
+      }
+    }
+  }
+}

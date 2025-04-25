@@ -1,0 +1,190 @@
+@use "variables" as *;
+@use "mixins";
+
+.work {
+  &__container {
+    position: relative;
+    margin-bottom: 8rem;
+
+    @include mixins.breakpoint-up(large) {
+      display: flex;
+      margin: 0 auto 9rem;
+      max-width: 90rem;
+    }
+  }
+
+  $tab-width: 10rem;
+  $tab-height: 4rem;
+
+  // Container holding all tab buttons
+  &__tabs {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    @include mixins.breakpoint-up(large) {
+      display: block;
+      width: $tab-width;
+      height: max-content; // Don't take more height than its content
+    }
+
+    .tab {
+      width: $tab-width;
+      height: $tab-height;
+      padding: 0.5rem;
+      border-right: none;
+      border-bottom: 0.2rem solid $cyan;
+      color: $light-gray;
+      font-size: $fz-xs;
+      font-weight: 500;
+      text-align: center;
+      transition: $ease-250;
+
+      @include mixins.breakpoint-up(large) {
+        border-right: 0.2rem solid $cyan;
+        border-bottom: none;
+      }
+
+      &:hover,
+      &:focus {
+        color: $light-blue;
+        background-color: $light-blue-hover;
+      }
+
+      &.active {
+        color: $light-blue;
+      }
+
+      @for $i from 1 through 2 {
+        &.tab-#{$i}.active {
+          // Selects general sibling div.highlighter
+          & ~ .highlighter {
+            transform: translateX(#{($i - 1) * 10}rem);
+
+            @include mixins.breakpoint-up(large) {
+              transform: translateY(#{($i - 1) * 4}rem);
+            }
+          }
+        }
+      }
+    }
+
+    .highlighter {
+      display: block;
+      height: 0.2rem;
+      width: $tab-width;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: $light-blue;
+      transform: translateX(0);
+      transition: transform 250ms ease-in-out;
+
+      @include mixins.breakpoint-up(large) {
+        height: $tab-height;
+        width: 0.2rem;
+        top: 0;
+        left: auto; // ~ Disable `left: 0;`
+        bottom: auto; // Disable `bottom: 0;`
+        right: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Container holding content for each tab
+  &__content {
+    position: relative;
+
+    @include mixins.breakpoint-up(large) {
+      margin-left: 4rem;
+    }
+
+    &_section {
+      position: absolute; // Take the section content out of flow
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      opacity: 0; // Make them invisible initially
+
+      &.visible {
+        position: relative; // IMPORTANT!
+        padding-top: 3rem;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1; // Visible content stacks on top
+        transition: opacity 250ms ease-in-out;
+
+        @include mixins.breakpoint-up(large) {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
+  &__company_name {
+    color: $light-gray;
+  }
+
+  &__duration {
+    color: $light-gray;
+    font-family: $ubuntu-mono;
+    font-weight: 300;
+    font-size: $fz-xxs;
+
+    .work__remote {
+      margin-left: 2rem;
+    }
+
+    @include mixins.breakpoint-up(large) {
+      font-size: $fz-xs;
+    }
+  }
+
+  &__description {
+    font-size: $fz-xs;
+
+    @include mixins.breakpoint-up(large) {
+      font-size: $fz-sm;
+    }
+
+    li {
+      display: flex;
+      line-height: 1.5;
+
+      // Green chevron as the bullet points
+      &::before {
+        content: "arrow_forward_ios";
+        margin-top: 0.1rem;
+        margin-right: 1.5rem;
+        color: $lime;
+        font-family: "Material Icons";
+        font-size: $fz-xxs;
+
+        @include mixins.breakpoint-up(large) {
+          font-size: $fz-xs;
+        }
+      }
+
+      p {
+        margin-bottom: 2rem;
+      }
+
+      &:last-child {
+        p {
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+
+  &__resume {
+    p {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .resume-btn {
+      margin: 0 auto;
+    }
+  }
+}

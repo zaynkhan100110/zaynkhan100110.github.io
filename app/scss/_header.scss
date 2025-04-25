@@ -1,0 +1,159 @@
+@use "variables" as *;
+@use "mixins";
+
+.header {
+  position: sticky;
+  top: 0; // Required when using position sticky
+  z-index: 999; // So that mobile menu & overlay is always on top
+  box-shadow: 0 0.2rem 0.4rem 0 rgb(0 0 0 / 20%);
+  background-color: $dark-cyan;
+  color: $white;
+
+  // Styles when mobile menu is opened
+  &.open {
+    .nav__hamburger {
+      // If we animate opacity to 0, it also applies to ::before & ::after
+      // Thus, the 3 lines will disappear. A workaround is to set background color
+      // of middle line to be same as the navbar background to make it go away
+      background-color: $dark-cyan;
+
+      &::before {
+        transform: translateY(-7px) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateY(4px) rotate(-45deg);
+      }
+    }
+
+    .nav__mobile_menu {
+      height: 24rem;
+    }
+  }
+
+  // Dark overlay when the mobile menu is opened
+  &__overlay {
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $black-overlay;
+  }
+}
+
+nav {
+  height: 5rem;
+  width: 100%;
+
+  .nav__logo {
+    display: inline-block;
+    transition: $ease-150;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      border: 0.1rem dashed $white;
+    }
+
+    > img {
+      display: block; // So that .nav__logo and img occupy same size
+      margin: auto 0;
+    }
+  }
+
+  .nav__links {
+    list-style: none;
+
+    & a {
+      display: inline-block;
+      padding: 1.5rem 2rem;
+      color: $white;
+      transition: $ease-150;
+
+      &:hover,
+      &:focus {
+        background-color: $blue-hover;
+      }
+    }
+  }
+
+  // Hamburger icon button
+  .nav__menu {
+    height: 2.4rem;
+    width: 2.4rem;
+    padding: 0;
+    background-color: transparent;
+    opacity: 1;
+    border: none;
+    outline: none; // Remove default outline on click
+    transition: $ease-150;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+  }
+
+  .nav__hamburger {
+    height: 0.3rem;
+    width: 2.4rem;
+    background-color: $white;
+    transition: $ease-150;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 0.3rem;
+      width: 2.4rem;
+      background-color: $white;
+      transition: $ease-150;
+    }
+
+    &::before {
+      transform-origin: 0.2rem 0.4rem;
+      transform: translateY(-7px);
+    }
+
+    &::after {
+      transform-origin: 0.4rem 0rem;
+      transform: translateY(4px);
+    }
+  }
+
+  div.nav__mobile_menu {
+    position: absolute;
+    top: 5rem;
+    left: 0rem;
+    width: 100%;
+
+    transition: $ease-250;
+    height: 0rem; // -> 24.0rem when opened
+    overflow: hidden; // Hide links when not opened
+
+    background-color: $dark-cyan;
+  }
+
+  .nav__mobile_links {
+    padding-left: 0;
+    margin: 2rem 0;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+
+    & a {
+      width: 100%;
+      padding: 1.5rem 0;
+      color: $white;
+
+      &:hover,
+      &:focus {
+        background-color: $blue-hover;
+      }
+    }
+  }
+}

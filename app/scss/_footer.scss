@@ -1,0 +1,110 @@
+@use "variables" as *;
+@use "mixins";
+@use "keyframes";
+
+.footer {
+  .container {
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  &__social_links {
+    margin-bottom: 3.5rem;
+
+    li:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link_item {
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    background-color: $dark-gray;
+    transform: scale(1);
+    transition: $ease-250;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+
+  // Different hover colors for social links
+  #github {
+    &:hover,
+    &:focus {
+      background-color: #2b3137;
+    }
+  }
+
+  #stack_overflow {
+    &:hover,
+    &:focus {
+      background-color: #f48024;
+    }
+  }
+
+  #linkedin {
+    &:hover,
+    &:focus {
+      background-color: #0077b5;
+    }
+  }
+
+  &__scroll_top_text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 11rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: $ease-250;
+  }
+
+  &__scroll_top {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 3rem;
+    color: $white;
+    background-color: $blue;
+    border-radius: 2.5rem;
+
+    &:hover,
+    &:focus {
+      background-color: $blue-hover;
+
+      & ~ .footer__scroll_top_text {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      & .material-icons {
+        animation-name: bounce-up;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+      }
+    }
+
+    .material-icons {
+      font-size: 3rem;
+    }
+  }
+
+  &__credits {
+    margin-bottom: 0.5rem;
+    font-size: $fz-xs;
+    text-align: center;
+  }
+
+  &__source_link {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    font-size: $fz-xxs;
+  }
+}

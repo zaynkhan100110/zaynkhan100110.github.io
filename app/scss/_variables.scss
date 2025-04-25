@@ -1,0 +1,54 @@
+// Colors
+$red: #de3d31;
+$orange: #ff9900;
+$orange-hover: rgba(255, 153, 0, 0.2);
+$lime: #5fd700;
+$green: #27c93f;
+$dark-green: #265600;
+$light-blue: #53d5e4;
+$light-blue-hover: rgba(83, 213, 228, 0.2);
+$blue: #3a95a0;
+$blue-hover: #3a96a080;
+$cyan: #436069;
+$dark-cyan: #21555b;
+$white: #ffffff;
+$light-gray: #c1c1c1;
+$light-gray-hover: rgba(178, 178, 178, 0.17);
+$gray: #777777;
+$dark-gray: #505050;
+$black: #1f2122;
+$black-overlay: rgba(31, 33, 34, 0.9);
+
+// Breakpoints
+$breakpoints-up: (
+  "medium": "481px",
+  "large": "769px",
+  "extra-large": "1081px",
+);
+
+$breakpoints-down: (
+  "small": "480px",
+  "medium": "768px",
+  "large": "1080px",
+);
+
+// Font sizes
+$fz-xxs: 1.4rem;
+$fz-xs: 1.5rem;
+$fz-sm: 1.6rem;
+$fz-md: 1.7rem;
+$fz-mmd: 1.8rem;
+$fz-lg: 1.9rem;
+$fz-xl: 2.2rem;
+
+$fz-h2-sm: 2.5rem;
+$fz-h2-md: 3rem;
+$fz-h2-lg: 3.3rem;
+$fz-h2-xl: 3.6rem;
+
+// Font stacks
+$ubuntu-mono: "Ubuntu Mono", "Courier New", Courier, monospace;
+
+// Transition
+$ease-150: all 150ms ease-in-out;
+$ease-250: all 250ms ease-in-out;
