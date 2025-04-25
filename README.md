@@ -17,4 +17,4 @@ here is the link og my webpage    (  https://zaynkhan100110.github.io    )
 
 
 
-                                                                      THANK YOU 
+                                                                THANK YOU 
