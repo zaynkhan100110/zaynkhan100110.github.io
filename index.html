@@ -9,7 +9,350 @@
       name="description"
       content="A Computer Hardware Technican's website who  can troubleshoot the problem in hardware componentes."
     />
-<p>this is me</p>
+    <meta
+      name="keywords"
+      content="computer-hardware-technician, developer, web, website, zayn khan, zayn, khan, it guy, shop manager, data analysis, networking"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ZAYN KHAN</title>
 
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/oleeole.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/oleeole.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/oleeole.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#21555B" />
+    <meta name="theme-color" content="#21555B" />
+
+    <meta property="og:url" content="https://zaynkhan100110.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ZAYN KHAN | IT GUY" />
+    <meta
+      property="og:description"
+      content="A Computer hardware technician and a shop manager with some other soft and hard skills . i love to gain skills and experiences."
+    />
+    <meta property="og:image" content="./images/og.png" />
+    <meta property="og:site_name" content="ZAYN KHAN | IT GUY" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header">
+      <div class="header__overlay has-fade"></div>
+      <div class="container">
+        <nav class="flex flex-ai-c flex-jc-sb pad-x-lg">
+          <a href="#" class="nav__logo">
+            <img src="./images/nav_logo.svg" alt="Logo" width="106" height="130" />
+          </a>
+          <ul class="nav__links hide-md-down flex">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#experience">Experience</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Menu icon -->
+          <button id="hamburger" class="nav__menu hide-lg-up" aria-label="Menu button">
+            <div class="nav__hamburger"></div>
+          </button>
+
+          <!-- Mobile menu  -->
+          <div class="nav__mobile_menu hide-lg-up">
+            <ul class="nav__mobile_links">
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#experience">Experience</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__terminal">
+          <div class="hero__traffic_light"></div>
+          <div class="hero__terminal_container">
+            <div class="hero__title flex">
+              <img
+                id="hero__chevron1"
+                class="green-chevron"
+                src="./images/green_chevron_right.svg"
+                aria-hidden="true"
+              />
+              <h1 id="hero__title1" class="hero__title_text" aria-label="Hi, I'm ZAYN KHAN"></h1>
+            </div>
+            <div class="hero__title flex">
+              <img
+                id="hero__chevron2"
+                class="green-chevron invisible"
+                src="./images/green_chevron_right.svg"
+                aria-hidden="true"
+              />
+              <h1 id="hero__title2" class="hero__title_text invisible">I'M A COMPUTER TECHNICIAN.</h1>
+            </div>
+            <div class="hero__content invisible">
+              <p class="hero__description">
+                I HAVE 2+ YEARS EXPERIENCE AS A COMPUTER TECHNICIAN AND A SHOP MANAGER.
+              </p>
+              <div class="hero__cta">
+                <a class="outline-btn email-btn" href="mailto:zaynkhan100110@gmail.com">
+                  <span class="material-icons no-select" aria-hidden="true">mail_outline</span>
+                  <span class="outline-btn-text">Get in Touch</span></a
+                >
+                <a class="outline-btn resume-btn" href="https://drive.google.com/file/d/13tzUxqvejOFCMtYby_hv8u0pa343L5tH" target="_blank" rel="noreferrer">
+                  <span class="material-icons no-select" aria-hidden="true">get_app</span>
+                  <span class="outline-btn-text">Resume</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <div class="container pad-y">
+        <h2 id="about" class="flex flex-jc-c">About Me</h2>
+        <div class="about__content flex flex-ai-c pad-x-lg">
+          <img class="about__photo" weight="400px" src="./images/me.webp" alt="Photo of me" />
+          <div class="about__intro_container flex-column">
+            <div class="about__intro">
+              <p>
+                Hello! I’m <strong>ZAYN KHAN </strong>and i have 2+ years experience as a computer technician and shop manager
+              on <solid>COMPUTER GALLERY</solid> ( a shop for buying for computer accessories and computer services ) </a
+                >.
+              </p>
+              <p>
+                As a computer technician i need find out the way for troubleshoot the problem for the coustomers and also need to handle the shop sell and engaged.
+              </p>
+              <p>I am also working to learn new technologies. Here are a few technologies that I have experience with:</p>
+            </div>
+            <div class="about__skills">
+              <ul>
+                <li>
+                  <img src="./images/skills/html.svg" loading="lazy" alt="HTML" />
+                  HTML & CSS
+                </li>
+                <li>
+                  <img src="./images/skills/python.svg" loading="lazy" alt="Python" />
+                  Python (new)
+                </li>
+                <li>
+                  <img src="./images/skills/c++.svg" loading="lazy" alt="c++" />
+                  C++ (new)
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img src="./images/skills/parrot.svg" loading="lazy" alt="parrot os" />
+                  Parrot os
+                </li>
+                <li>
+                  <img src="./images/skills/window.svg" loading="lazy" alt="Windows os" />
+                 Windows
+                </li>
+                <li>
+                  <img src="./images/skills/contentwriting.png" loading="lazy" alt="contentwriting" />
+                  Content Writing
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img src="./images/skills/networking.png" loading="lazy" alt="networking" />
+                 Networking (basic)
+                </li>
+                <li>
+                  <img src="./images/skills/git.svg" loading="lazy" alt="Git" />
+                  Git & GitHub
+                </li>
+                <li>
+                  <img src="./images/skills/data.png" loading="lazy" alt="Data" />
+                  Data Analysis
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="work">
+      <div class="container pad-y">
+        <h2 id="experience" class="flex flex-jc-c">Experience</h2>
+        <div class="work__container pad-x-lg">
+          <div class="work__tabs">
+            <button class="tab tab-1 active" href="#" data-tab="1">Night</button>
+            <button class="tab tab-2" href="#" data-tab="2">Day</button>
+            <span class="highlighter"></span>
+          </div>
+          <div class="work__content">
+            <div class="work__content_section visible" data-tab="1">
+              <h3>Computer Technician<span class="work__company_name"> @ CG</span></h3>
+              <p class="work__duration">April 2023 - present<span class="work__there"> // ON SHOP</span></p>
+              <ul class="work__description">
+                <li>
+                  <p>
+                    I need to find the problem in computer hardware and slove that
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    I need to maintenance the exact hardware for need and build that
+                  </p>
+                </li>
+                <li>
+                  <p>
+                   I also need to fix the software for that system
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="work__content_section" data-tab="2">
+              <h3>Manager<span class="work__company_name"> @ CG</span></h3>
+              <p class="work__duration">June 2023 - present // ON SHOP</p>
+              <ul class="work__description">
+                <li>
+                  <p>
+                    I need to handle the customers to sell a product to them
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    As a leader i need to take care other staff members (I give them a speace for motivate them)
+                   </p>
+                </li>
+                <li>
+                  <p>
+                    As a manager i need to maintain the all amount of money on this shop
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="work__resume">
+          <p>Interested in my full resume?</p>
+          <a class="outline-btn resume-btn" href="https://drive.google.com/file/d/13tzUxqvejOFCMtYby_hv8u0pa343L5tH" target="_blank" rel="noreferrer">
+            <span class="material-icons no-select" aria-hidden="true">get_app</span>
+            <span class="outline-btn-text">Resume</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="project">
+      <div class="container pad-y"> 
+        <div class="project__header">
+          <h2 id="projects" class="flex flex-jc-c">Projects</h2>
+          <p class="project__subtitle">(coming soon) <br>  for now click the icon bellow</p>
+          <!-- <audio id="rain"  src="sound/rain.ogg" autoplay ></audio> -->
+          <!-- <button id="raintop" onclick="pauseMusic()">🔊</button> -->
+          
+   <audio id="music" src="/sound/rain.ogg" autoplay loop ></audio>
+   <button id="musicb"  onclick="pauseMusique()">🔊</button>
+   
+          <!-- <audio  
+     src="sound/rain.mp3"  loop allow="autoplay"
+    > </audio> -->
+ <!-- Contact Me -->
+    <section class="contact">
+      <div class="container pad-y pad-x-lg">
+        <h2 id="contact" class="flex flex-jc-c">Contact Me</h2>
+        <p class="contact__message">
+          Thank you for visiting this webpage ! If you’re looking for a Computer Technician / IT GUY, have a question or want to say
+          hi, feel free to shoot me an email!
+        </p>
+        <a class="contact__email outline-btn email-btn" href="mailto:zaynkhan100110@gmail.com">
+          <span class="material-icons no-select" aria-hidden="true">mail_outline</span>
+          <span class="outline-btn-text">Get in Touch</span></a
+        >
+        <button class="contact__copy_email flex flex-ai-c">
+          <span class="material-icons no-select" aria-hidden="true">content_copy</span>
+          <span class="copy-btn-text">Copy Email Address</span>
+        </button>
+        <p class="contact__info_box copy-success has-fade">Copied to clipboard</p>
+        <p class="contact__info_box copy-fail has-fade">Copy failed. Try again!</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container pad-x-lg">
+        <ul class="footer__social_links flex flex-jc-c">
+          <li>
+            <a
+              id="github"
+              class="footer__link_item"
+              href="https://github.com/zaynkhan100110"
+              title="GitHub"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="./images/github.svg" loading="lazy" alt="GitHub" />
+            </a>
+          </li>
+          <li>
+            <a
+              id="Telegram"
+              class="footer__link_item"
+              href="https://t.me/zaynkhan100110"
+              title="Telegram"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="./images/Telegram.svg" loading="lazy" alt="Telegram" />
+            </a>
+          </li>
+          <li>
+            <a
+              id="linkedin"
+              class="footer__link_item"
+              href="https://www.linkedin.com/in/zaynkhan100110/"
+              title="LinkedIn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="./images/linkedin.svg" loading="lazy" alt="LinkedIn" />
+            </a>
+          </li>
+        </ul>
+        <a class="footer__scroll_top flex flex-ai-c flex-jc-c" href="#" aria-label="Scroll to Top">
+          <span class="material-icons no-select">expand_less</span>
+        </a>
+        <p class="footer__scroll_top_text">Scroll to Top</p>
+
+      
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="app/js/script.js"></script>
   </body>
 </html>
