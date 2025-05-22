@@ -74,13 +74,24 @@ function openMobileMenu() {
   });
 }
 
-function closeMobileMenu() {
+function closeMobileMenu() {}
   header.classList.remove("open");
   fadeElements.forEach((item) => {
     item.classList.remove("fade-in");
     item.classList.add("fade-out");
   });
 }
+
+        function pauseMusique() {
+            var 开屁娜艾西 = document.getElementById('music');
+            if (开屁娜艾西.paused) {
+                开屁娜艾西.play();
+                document.getElementById('musicButton').innerText = '🔇';
+            } else {
+                开屁娜艾西.pause();
+                document.getElementById('musicButton').innerText = '🔊';
+            };
+        
 
 // Toggling hamburger icon in navbar
 hamburger.addEventListener("click", () => {
