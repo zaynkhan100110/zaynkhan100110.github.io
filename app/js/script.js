@@ -81,6 +81,8 @@ function closeMobileMenu() {}
     item.classList.add("fade-out");
   });
 
+      
+
 
         function pauseMusique() {
             var 开屁娜艾西 = document.getElementById('music');
@@ -92,6 +94,7 @@ function closeMobileMenu() {}
                 document.getElementById('musicButton').innerText = '🔊';
             };
           }
+
 // Toggling hamburger icon in navbar
 hamburger.addEventListener("click", () => {
   header.classList.contains("open") ? closeMobileMenu() : openMobileMenu();
