@@ -74,7 +74,7 @@ function openMobileMenu() {
   });
 }
 
-function closeMobileMenu() {}
+function closeMobileMenu() {
   header.classList.remove("open");
   fadeElements.forEach((item) => {
     item.classList.remove("fade-in");
