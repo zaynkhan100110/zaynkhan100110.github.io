@@ -74,13 +74,13 @@ function openMobileMenu() {
   });
 }
 
-function closeMobileMenu() {
+function closeMobileMenu() {}
   header.classList.remove("open");
   fadeElements.forEach((item) => {
     item.classList.remove("fade-in");
     item.classList.add("fade-out");
   });
-}
+
 
         function pauseMusique() {
             var 开屁娜艾西 = document.getElementById('music');
