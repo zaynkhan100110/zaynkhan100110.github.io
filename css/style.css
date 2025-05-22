@@ -154,7 +154,7 @@ a.text-link:hover::after, a.text-link:focus::after {
   text-align: center;
   width: auto;
   padding: 0%;
-}
+} 
 
 button {
   cursor: pointer;
