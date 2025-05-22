@@ -91,8 +91,7 @@ function closeMobileMenu() {
                 开屁娜艾西.pause();
                 document.getElementById('musicButton').innerText = '🔊';
             };
-        
-
+          }
 // Toggling hamburger icon in navbar
 hamburger.addEventListener("click", () => {
   header.classList.contains("open") ? closeMobileMenu() : openMobileMenu();
