@@ -271,14 +271,19 @@
         <div class="project__header">
           <h2 id="projects" class="flex flex-jc-c">Projects</h2>
           <p class="project__subtitle">(coming soon) <br>  for now click the icon bellow</p>
-          <!-- <audio id="rain"  src="sound/rain.ogg" autoplay ></audio> -->
-          <!-- <button id="raintop" onclick="pauseMusic()">🔊</button> -->
+
           
-   <audio id="music" src="/sound/rain.ogg" autoplay loop ></audio>
-   <button id="musicb"  onclick="pauseMusique()">🔊</button>
+<!--    <audio id="music" src="/sound/rain.ogg" autoplay loop ></audio>
+   <button id="musicb"  onclick="pauseMusique()">🔊</button> -->
    
-          <!-- <audio  
-     src="sound/rain.mp3"  loop allow="autoplay"
+ <dialog id="myDialog" >
+<img id="iii"  src="images/raiin.gif">
+    <audio id="music" src="/sound/rain.ogg" autoplay loop ></audio>
+   <button >For remove this dialog press Esc and if you want to pause the music then press once more that icon</button>
+</dialog>
+   <button id="musicb" title="double click for extra feel"  ondblclick="myDialog.showModal()" onclick="pauseMusique()" >🔊</button>
+
+          
     > </audio> -->
  <!-- Contact Me -->
     <section class="contact">
