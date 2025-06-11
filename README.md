@@ -6,7 +6,7 @@ you can visit my webpage which is build with html , css , scss , javasctipt , ‚ù
 
 the domain for this website given by github.com
 
-here is the link og my webpage    (  https://zaynkhan100110.github.io    )
+here is the link of my webpage    (  https://zaynkhan100110.github.io    )
 
 
 
