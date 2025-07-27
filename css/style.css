@@ -177,6 +177,7 @@ height: 100%;
 button {
   cursor: pointer;
   background-color: transparent;
+  color: cyan;
   border: none;
   outline: none;
   font-family: "Ubuntu", sans-serif;
